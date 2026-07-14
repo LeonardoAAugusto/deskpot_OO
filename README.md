@@ -1,9 +1,5 @@
 # Sistema de Gestão para Clínica de Psicologia
 
-Projeto de Programação Orientada a Objetos em Python — cobre os 4 níveis da
-tarefa (POO pura, menu funcional, banco de dados e GUI) em um único app
-desktop funcional.
-
 ## Demonstração:
 
 | Papel      | E-mail              | Senha |
