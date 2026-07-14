@@ -4,23 +4,7 @@ Projeto de Programação Orientada a Objetos em Python — cobre os 4 níveis da
 tarefa (POO pura, menu funcional, banco de dados e GUI) em um único app
 desktop funcional.
 
-## Como rodar (Windows)
-
-1. Instale o Python 3.10+ (https://www.python.org/downloads/), marcando a
-   opção **"Add Python to PATH"** durante a instalação.
-2. Baixe/extraia esta pasta `clinica_psicologia`.
-3. Abra o Prompt de Comando (cmd) ou PowerShell dentro da pasta e rode:
-
-   ```
-   python main.py
-   ```
-
-Não é necessário instalar nada extra: `tkinter` (interface gráfica) e
-`sqlite3` (banco de dados) já vêm inclusos na instalação padrão do Python
-no Windows.
-
-Na primeira execução, o programa cria automaticamente o arquivo `clinica.db`
-com 3 usuários de demonstração:
+## Demonstração:
 
 | Papel      | E-mail              | Senha |
 |------------|---------------------|-------|
@@ -29,7 +13,7 @@ com 3 usuários de demonstração:
 | Paciente   | joao@paciente.com   | 123   |
 
 (Login de paciente ainda não tem tela própria — o foco do app é
-Secretaria/Psicólogo, conforme o enunciado.)
+Secretaria/Psicólogo)
 
 ## Estrutura de arquivos
 
@@ -61,24 +45,3 @@ tentativa de leitura/escrita nas tabelas `prontuarios`/`sessoes` quando o
 usuário logado é do tipo `secretaria`, lançando `AcessoNegadoError`. Isso
 é testado tanto na camada de banco quanto refletido na GUI (o botão de
 prontuário só aparece/funciona para o psicólogo).
-
-## Roteiro sugerido para os vídeos
-
-- **Nível 1 (3 min):** mostre o `diagrama_uml.svg`, explique as 5 relações,
-  rode um teste rápido no terminal (`python -c "from models import ..."`)
-  mostrando o polimorfismo de `calcularValor()`.
-- **Nível 2 (6 min):** rode `python main.py`, faça login como secretária e
-  psicólogo, navegue pelos menus, agende uma consulta, registre uma sessão.
-- **Nível 3 (6 min):** mostre o arquivo `clinica.db` sendo criado, feche e
-  reabra o programa provando que os dados persistem; tente logar como
-  secretária e mostre que o acesso ao prontuário é bloqueado.
-- **Nível 4 (6 min):** destaque a tela de login, o menu lateral, os
-  indicadores coloridos da agenda (verde/amarelo/vermelho) e os pop-ups de
-  "Novo Agendamento" e "Prontuário".
-
-## Observações
-
-- Todo o código foi testado ponta a ponta (login, CRUD, agendamento,
-  prontuário e regra de acesso) antes da entrega.
-- Sinta-se à vontade para trocar os dados de demonstração em
-  `App._seed_demo_data()` dentro de `gui.py`.
