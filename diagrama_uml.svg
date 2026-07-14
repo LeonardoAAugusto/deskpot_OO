@@ -1,0 +1,146 @@
+<svg viewBox="0 0 1300 950" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Arial, sans-serif">
+  <defs>
+    <marker id="tri" markerWidth="16" markerHeight="14" refX="15" refY="7" orient="auto">
+      <path d="M0,0 L16,7 L0,14 Z" fill="white" stroke="#2c3e50" stroke-width="1.5"/>
+    </marker>
+    <marker id="diamond" markerWidth="18" markerHeight="12" refX="0" refY="6" orient="auto">
+      <path d="M0,6 L9,0 L18,6 L9,12 Z" fill="#2c3e50"/>
+    </marker>
+    <marker id="arrowOpen" markerWidth="12" markerHeight="10" refX="10" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10" fill="none" stroke="#2c3e50" stroke-width="1.5"/>
+    </marker>
+  </defs>
+
+  <rect width="1300" height="950" fill="white"/>
+  <text x="20" y="30" font-size="20" font-weight="bold" fill="#22313f">Diagrama de Classes — Sistema Clínica de Psicologia</text>
+
+  <!-- Usuario (abstract) -->
+  <g>
+    <rect x="520" y="60" width="240" height="120" fill="#eaf2fb" stroke="#2c3e50" stroke-width="1.5"/>
+    <text x="640" y="80" text-anchor="middle" font-style="italic" font-weight="bold" font-size="13">«abstract»</text>
+    <text x="640" y="97" text-anchor="middle" font-weight="bold" font-size="14">Usuario</text>
+    <line x1="520" y1="105" x2="760" y2="105" stroke="#2c3e50"/>
+    <text x="530" y="120" font-size="11">- id: int</text>
+    <text x="530" y="134" font-size="11">- nome, email, senha: String</text>
+    <text x="530" y="148" font-size="11">- telefone: String</text>
+    <line x1="520" y1="155" x2="760" y2="155" stroke="#2c3e50"/>
+    <text x="530" y="170" font-size="11" font-style="italic">+ exibirMenu(): void {abstract}</text>
+  </g>
+
+  <!-- Psicologo -->
+  <rect x="120" y="280" width="220" height="110" fill="#fdf6e3" stroke="#2c3e50" stroke-width="1.5"/>
+  <text x="230" y="300" text-anchor="middle" font-weight="bold" font-size="14">Psicologo</text>
+  <line x1="120" y1="308" x2="340" y2="308" stroke="#2c3e50"/>
+  <text x="130" y="323" font-size="11">- crp: String</text>
+  <text x="130" y="337" font-size="11">- especialidade: String</text>
+  <line x1="120" y1="345" x2="340" y2="345" stroke="#2c3e50"/>
+  <text x="130" y="360" font-size="11">+ exibirMenu(): void</text>
+
+  <!-- Secretaria -->
+  <rect x="400" y="280" width="220" height="110" fill="#fdf6e3" stroke="#2c3e50" stroke-width="1.5"/>
+  <text x="510" y="300" text-anchor="middle" font-weight="bold" font-size="14">Secretaria</text>
+  <line x1="400" y1="308" x2="620" y2="308" stroke="#2c3e50"/>
+  <text x="410" y="323" font-size="11">- numCarteiraTrabalho: String</text>
+  <line x1="400" y1="345" x2="620" y2="345" stroke="#2c3e50"/>
+  <text x="410" y="360" font-size="11">+ exibirMenu(): void</text>
+
+  <!-- Paciente -->
+  <rect x="680" y="280" width="220" height="110" fill="#fdf6e3" stroke="#2c3e50" stroke-width="1.5"/>
+  <text x="790" y="300" text-anchor="middle" font-weight="bold" font-size="14">Paciente</text>
+  <line x1="680" y1="308" x2="900" y2="308" stroke="#2c3e50"/>
+  <text x="690" y="323" font-size="11">- cpf: String</text>
+  <text x="690" y="337" font-size="11">- dataNascimento: String</text>
+  <line x1="680" y1="345" x2="900" y2="345" stroke="#2c3e50"/>
+  <text x="690" y="360" font-size="11">+ exibirMenu(): void</text>
+
+  <!-- Heranca lines (triangulo vazio apontando pra Usuario) -->
+  <line x1="230" y1="280" x2="600" y2="180" stroke="#2c3e50" stroke-width="1.5" marker-end="url(#tri)"/>
+  <line x1="510" y1="280" x2="630" y2="180" stroke="#2c3e50" stroke-width="1.5" marker-end="url(#tri)"/>
+  <line x1="790" y1="280" x2="680" y2="180" stroke="#2c3e50" stroke-width="1.5" marker-end="url(#tri)"/>
+
+  <!-- Prontuario -->
+  <rect x="680" y="450" width="200" height="90" fill="#e8f8f0" stroke="#2c3e50" stroke-width="1.5"/>
+  <text x="780" y="470" text-anchor="middle" font-weight="bold" font-size="14">Prontuario</text>
+  <line x1="680" y1="478" x2="880" y2="478" stroke="#2c3e50"/>
+  <text x="690" y="493" font-size="11">- sessoes: List&lt;Sessao&gt;</text>
+  <line x1="680" y1="500" x2="880" y2="500" stroke="#2c3e50"/>
+  <text x="690" y="515" font-size="11">+ adicionarSessao(s)</text>
+
+  <!-- Composicao: losango preenchido do lado de Paciente -->
+  <line x1="790" y1="390" x2="780" y2="450" stroke="#2c3e50" stroke-width="1.5" marker-start="url(#diamond)"/>
+  <text x="800" y="425" font-size="10" fill="#555">1 possui 1 (composição)</text>
+
+  <!-- Sessao -->
+  <rect x="960" y="450" width="200" height="90" fill="#e8f8f0" stroke="#2c3e50" stroke-width="1.5"/>
+  <text x="1060" y="470" text-anchor="middle" font-weight="bold" font-size="14">Sessao</text>
+  <line x1="960" y1="478" x2="1160" y2="478" stroke="#2c3e50"/>
+  <text x="970" y="493" font-size="11">- data, anotacoes: String</text>
+  <text x="970" y="507" font-size="11">- sentimentosObservados: String</text>
+
+  <line x1="880" y1="495" x2="960" y2="495" stroke="#2c3e50" stroke-width="1.5" marker-start="url(#diamond)"/>
+  <text x="895" y="485" font-size="10" fill="#555">1..*</text>
+
+  <!-- Consulta (abstract) -->
+  <rect x="360" y="600" width="240" height="120" fill="#eaf2fb" stroke="#2c3e50" stroke-width="1.5"/>
+  <text x="480" y="620" text-anchor="middle" font-style="italic" font-weight="bold" font-size="13">«abstract»</text>
+  <text x="480" y="637" text-anchor="middle" font-weight="bold" font-size="14">Consulta</text>
+  <line x1="360" y1="645" x2="600" y2="645" stroke="#2c3e50"/>
+  <text x="370" y="660" font-size="11">- paciente: Paciente</text>
+  <text x="370" y="674" font-size="11">- psicologo: Psicologo</text>
+  <text x="370" y="688" font-size="11">- dataHora: String</text>
+  <line x1="360" y1="695" x2="600" y2="695" stroke="#2c3e50"/>
+  <text x="370" y="710" font-size="11" font-style="italic">+ calcularValor(): double {abstract}</text>
+
+  <!-- Associacao Consulta -> Paciente / Psicologo -->
+  <line x1="600" y1="650" x2="790" y2="390" stroke="#2c3e50" stroke-width="1.5" marker-end="url(#arrowOpen)"/>
+  <text x="700" y="530" font-size="10" fill="#555">associação</text>
+  <line x1="420" y1="600" x2="260" y2="390" stroke="#2c3e50" stroke-width="1.5" marker-end="url(#arrowOpen)"/>
+  <text x="310" y="510" font-size="10" fill="#555">associação</text>
+
+  <!-- Subclasses Consulta -->
+  <rect x="60" y="800" width="220" height="90" fill="#fdf6e3" stroke="#2c3e50" stroke-width="1.5"/>
+  <text x="170" y="825" text-anchor="middle" font-weight="bold" font-size="13">ConsultaIndividual</text>
+  <line x1="60" y1="833" x2="280" y2="833" stroke="#2c3e50"/>
+  <text x="70" y="850" font-size="11">+ calcularValor(): double</text>
+  <text x="70" y="864" font-size="10" fill="#555">retorna valor padrão</text>
+
+  <rect x="360" y="800" width="220" height="90" fill="#fdf6e3" stroke="#2c3e50" stroke-width="1.5"/>
+  <text x="470" y="825" text-anchor="middle" font-weight="bold" font-size="13">TerapiaCasal</text>
+  <line x1="360" y1="833" x2="580" y2="833" stroke="#2c3e50"/>
+  <text x="370" y="850" font-size="11">+ calcularValor(): double</text>
+  <text x="370" y="864" font-size="10" fill="#555">+30% (override)</text>
+
+  <rect x="660" y="800" width="220" height="90" fill="#fdf6e3" stroke="#2c3e50" stroke-width="1.5"/>
+  <text x="770" y="825" text-anchor="middle" font-weight="bold" font-size="13">ConsultaOnline</text>
+  <line x1="660" y1="833" x2="880" y2="833" stroke="#2c3e50"/>
+  <text x="670" y="850" font-size="11">+ calcularValor(): double</text>
+  <text x="670" y="864" font-size="10" fill="#555">-10% (override)</text>
+
+  <line x1="170" y1="800" x2="440" y2="720" stroke="#2c3e50" stroke-width="1.5" marker-end="url(#tri)"/>
+  <line x1="470" y1="800" x2="480" y2="720" stroke="#2c3e50" stroke-width="1.5" marker-end="url(#tri)"/>
+  <line x1="770" y1="800" x2="530" y2="720" stroke="#2c3e50" stroke-width="1.5" marker-end="url(#tri)"/>
+
+  <!-- GeradorRecibo -->
+  <rect x="960" y="620" width="220" height="90" fill="#fbe9e7" stroke="#2c3e50" stroke-width="1.5"/>
+  <text x="1070" y="645" text-anchor="middle" font-weight="bold" font-size="13">GeradorRecibo</text>
+  <line x1="960" y1="653" x2="1180" y2="653" stroke="#2c3e50"/>
+  <text x="970" y="670" font-size="11">+ gerar(consulta: Consulta)</text>
+  <text x="970" y="684" font-size="10" fill="#555">{static, sem atributo Consulta}</text>
+
+  <!-- Dependencia tracejada de GeradorRecibo -> Consulta -->
+  <line x1="960" y1="660" x2="600" y2="660" stroke="#2c3e50" stroke-width="1.5" stroke-dasharray="6,4" marker-end="url(#arrowOpen)"/>
+  <text x="700" y="650" font-size="10" fill="#555">«dependência»</text>
+
+  <!-- Legenda -->
+  <g font-size="11" fill="#333">
+    <text x="20" y="900" font-weight="bold">Legenda:</text>
+    <line x1="90" y1="896" x2="130" y2="896" stroke="#2c3e50" marker-end="url(#tri)"/>
+    <text x="140" y="900">Herança</text>
+    <line x1="220" y1="896" x2="260" y2="896" stroke="#2c3e50" marker-start="url(#diamond)"/>
+    <text x="270" y="900">Composição</text>
+    <line x1="370" y1="896" x2="410" y2="896" stroke="#2c3e50" marker-end="url(#arrowOpen)"/>
+    <text x="420" y="900">Associação</text>
+    <line x1="510" y1="896" x2="560" y2="896" stroke="#2c3e50" stroke-dasharray="6,4" marker-end="url(#arrowOpen)"/>
+    <text x="570" y="900">Dependência</text>
+  </g>
+</svg>
